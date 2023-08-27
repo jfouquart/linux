@@ -291,6 +291,9 @@ nv50_ram_calc(struct nvkm_ram *base, u32 freq)
 	case NVKM_RAM_TYPE_GDDR3:
 		ret = nvkm_gddr3_calc(&ram->base);
 		break;
+	case NVKM_RAM_TYPE_DDR2:
+		ret = nvkm_sddr2_calc(&ram->base);
+		break;
 	default:
 		ret = -ENOSYS;
 		break;
